@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(tempC) {
+            this.tempC = tempC;
+        }
+
+        changeToF() {
+            if (this.tempC < -273) {
+                return 'Nhập số lớn hơn -273 độ C';
+            }
+            return (this.tempC * 33.8).toFixed(2);
+        }
+
+        changeToK() {
+            if (this.tempC < -273) {
+                return 'Nhập số lớn hơn -273 độ C';
+            }
+                return (this.tempC * 274.15).toFixed(3);
+
+        }
+    }
+    let temp = new Temperature(25);
+    document.write(`Độ F là: ${temp.changeToF()}` + '<br>');
+    document.write(`Độ K là: ${temp.changeToK()}`);
+
+</script>
+</body>
+</html>

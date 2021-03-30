@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Funny circles</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border: 1px solid dodgerblue" >
+</canvas>
+<script>
+    class Circle {
+        constructor(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.c = document.getElementById('myCanvas');
+            this.ctx = this.c.getContext('2d');
+        }
+       createCircle() {
+           this.ctx.beginPath();
+           this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+           this.ctx.fill();
+       }
+    }
+    let circle = new Circle(300, 300, 80);
+    circle.createCircle();
+
+
+</script>
+
+</body>
+</html>

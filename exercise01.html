@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000px" height="300px" style="border: 1px solid chocolate"></canvas>
+<p id="result"></p>
+<script>
+       class Rectangle {
+           constructor(x, y, width, height) {
+               this.x = x;
+               this.y = y;
+               this.width = width;
+               this.height = height;
+               this.ctx = document.getElementById('myCanvas').getContext('2d');
+           }
+           getAre() {
+               return this.width * this.height;
+           }
+           chuVi() {
+               return this.width * 2 + this.height * 2;
+           }
+           display(){
+               this.ctx.beginPath();
+               this.ctx.rect(this.x,this.y, this.width, this.height);
+               this.ctx.stroke();
+           }
+       }
+
+       let x = +prompt();
+       let y = +prompt();
+       let width = +prompt();
+       let height = +prompt();
+       let rectangle = new Rectangle(x, y, width, height);
+       rectangle.display();
+       document.write(`Diện tích là ${rectangle.getAre()} <br>`);
+       document.write(`Chu vi là ${rectangle.chuVi()}`)
+</script>
+</body>
+</html>
